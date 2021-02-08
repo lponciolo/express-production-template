@@ -1,5 +1,5 @@
-const getWelcomeService = async() => {
-    return await ('Hello world!')
-  }
+const getWelcomeService = async () => {
+  return await 'Hello world!'
+}
 
-export {getWelcomeService}
+export { getWelcomeService }

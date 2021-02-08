@@ -26,12 +26,12 @@ export default async ({ app }: { app: express.Application }) => {
   app.use(require('morgan')('dev'))
   app.use(bodyParser.urlencoded({ extended: false }))
   app.use(bodyParser.json())
- 
+
   // ...add more middlewares here
 
   app.use('/', routes)
   // Devuelve la aplicación express
-  //404 MiddleWare
+  // 404 MiddleWare
   app.use('/*', MiddleWare404)
   return app
 }
