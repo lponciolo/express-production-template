@@ -1,17 +1,17 @@
 import * as express from 'express'
-import authRoute from './auth'
+
 const router = express.Router()
 
-import auth from '../middlewares/auth'
+//import controllers
+import WelcomeRoute from "./welcome.route"
+import loginRoute from './login.route'
+import adminRoute from './admin.route'
+//
 
-router.get('/', (request, response) => {
-  response.send('Hello world!')
-})
+// import more routes here
 
-router.use('/login', authRoute)
-
-router.get('/admin', auth, (request, response) => {
-  response.send('Hello admin!')
-})
+router.use('/', WelcomeRoute )
+router.use('/login', loginRoute)
+router.use('/admin',adminRoute)
 
 export default router
