@@ -12,7 +12,6 @@ const authenticateJWT = async (req: any, res: any, next: any) => {
       if (err) {
         return res.sendStatus(403)
       }
-
       req.user = user
       next()
     })
