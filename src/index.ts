@@ -3,24 +3,26 @@
  */
 import loaders from './loaders'
 import express from 'express'
-import routes from './routes'
+
+
 /**
  * App Variables
  */
 const init = async () => {
   const app = express()
-  await loaders(app)
 
-  if (!process.env.PORT) {
-    process.exit(1)
-  }
+  loaders(app).then(() => {
+    if (!process.env.PORT) {
+      process.exit(1)
+    }
 
-  const PORT: number = parseInt(process.env.PORT as string, 10)
+    const PORT: number = parseInt(process.env.PORT as string, 10)
 
-  app.use('/', routes)
 
-  app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`)
+
+    app.listen(PORT, () => {
+      console.log(`Listening on port ${PORT}`)
+    })
   })
 }
 

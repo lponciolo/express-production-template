@@ -2,6 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import helmet from 'helmet'
+import routes from './../routes'
 
 export default async ({ app }: { app: express.Application }) => {
   const options: cors.CorsOptions = {
@@ -23,7 +24,7 @@ export default async ({ app }: { app: express.Application }) => {
   app.use(cors(options))
   app.use(require('morgan')('dev'))
   app.use(bodyParser.urlencoded({ extended: false }))
-
+  app.use('/', routes)
   // ...Más middlewares
 
   // Devuelve la aplicación express
