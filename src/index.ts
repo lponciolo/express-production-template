@@ -4,7 +4,6 @@
 import loaders from './loaders'
 import express from 'express'
 
-
 /**
  * App Variables
  */
@@ -17,8 +16,6 @@ const init = async () => {
     }
 
     const PORT: number = parseInt(process.env.PORT as string, 10)
-
-
 
     app.listen(PORT, () => {
       console.log(`Listening on port ${PORT}`)
