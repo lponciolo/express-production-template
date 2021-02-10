@@ -75,7 +75,7 @@
   "files":["types.d.ts"],
   "include": [
     "src/**/*.ts",
-    "__tests__/*"
+    "__tests__/**/*.ts"
   ],
   "exclude": [
     "node_modules"

@@ -12,7 +12,7 @@ module.exports = {
     'sourceType': 'module',
   },
  
-  plugins: ['@typescript-eslint', 'prettier'],
+  plugins: ['@typescript-eslint', 'prettier', 'eslint-plugin-jest'],
   rules: {
     'new-cap': 0,
     'prettier/prettier': [

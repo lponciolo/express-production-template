@@ -1,5 +1,4 @@
-const getAdminService = async () => {
+const getAdminWelcome = async () => {
   return await 'Hello Admin!'
 }
-
-export { getAdminService }
+export { getAdminWelcome }

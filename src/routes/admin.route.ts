@@ -1,5 +1,6 @@
-import * as express from 'express'
-const router = express.Router()
+import { Router } from 'express'
+
+const router = Router()
 
 // import middlewares
 import auth from '../middlewares/auth'

@@ -1,10 +1,10 @@
-import express from 'express'
+import { Application } from 'express'
 import expressLoader from './express'
 import Logger from './logger'
 import * as dotenv from 'dotenv'
 import path from 'path'
 
-export default async (expressApp: express.Application) => {
+export default async (expressApp: Application) => {
   Logger.info('inicializando')
   const result = dotenv.config({ path: path.join(__dirname, '../../.env') })
   if (result.error) {
