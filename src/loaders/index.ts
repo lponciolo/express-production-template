@@ -6,7 +6,7 @@ import path from 'path'
 
 export default async (expressApp: express.Application) => {
   Logger.info('inicializando')
-  const result = dotenv.config({ path: path.join(__dirname, '../../../.env') })
+  const result = dotenv.config({ path: path.join(__dirname, '../../.env') })
   if (result.error) {
     Logger.error('error loading dot-env')
     throw result.error

@@ -1,5 +1,5 @@
 const getWelcomeService = async () => {
-  return await 'Hello world!'
+  return await 'Hello World!'
 }
 
 export { getWelcomeService }
