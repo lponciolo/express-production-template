@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express'
 import Joi from 'joi'
 import validateRequest from './index'
 
-export const Schema = Joi.object({})
+const Schema = Joi.object({})
 
 const welcomeValidationSchema = (
   req: Request,
