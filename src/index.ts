@@ -3,7 +3,7 @@
  */
 import loaders from './loaders'
 import express from 'express'
-
+import exitLoader from './loaders/exitLoader'
 /**
  * App Variables
  */
@@ -20,7 +20,7 @@ loaders(app).then(() => {
   const server = app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
   })
-  server.close()
+  exitLoader(server)
 })
 
 export { app }
