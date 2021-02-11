@@ -6,6 +6,6 @@ import { welcomeValidationSchema } from '../validators/welcome.validation'
 import { getWelcomeController } from '../controllers/wellcome.controller'
 //
 
-router.get('/', getWelcomeController)
+router.get('/', welcomeValidationSchema, getWelcomeController)
 
 export default router
