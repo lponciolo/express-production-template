@@ -1,5 +1,5 @@
 import { Router } from 'express'
-
+import { getAdminRouteValidationSchema } from '../validators/admin.validation'
 const router = Router()
 
 // import middlewares
@@ -8,6 +8,6 @@ import auth from '../middlewares/auth'
 
 import { getAdminController } from '../controllers/admin.controller'
 
-router.get('/', auth, getAdminController)
+router.get('/', getAdminRouteValidationSchema, auth, getAdminController)
 
 export default router
