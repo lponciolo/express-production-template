@@ -1,4 +1,4 @@
 const getAdminWelcome = async () => {
-  return await 'Hello Admin!'
+  return 'Hello Admin!'
 }
 export { getAdminWelcome }

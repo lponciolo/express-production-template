@@ -4,6 +4,7 @@ module.exports = {
   roots: [
       "<rootDir>/__tests__/"
   ],
+  setupFiles: ["<rootDir>/src/config.ts"],
   testEnvironment: "node",
   transform: {
       '^.+\\.tsx?$': 'ts-jest'
