@@ -21,9 +21,8 @@ const postLoginService = async (username: String, password: String) => {
   const user = users.find((u) => {
     return u.username === username && u.password === password
   })
-  console.log(user)
+
   if (user) {
-    console.log(user)
     // Generate an access token
     accessToken = jwt.sign(
       { username: user.username, role: user.role },
