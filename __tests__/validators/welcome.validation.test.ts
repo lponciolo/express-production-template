@@ -14,7 +14,7 @@ describe('Welcome Service -> welcomeValidationSchema', () => {
     const mockValidateRequest = validateRequest as jest.Mock
     mockValidateRequest.mockImplementation((mock, emptyNext, schema) => validationUtils(mock, schema))
     it('should get a successfull validation', async () => {
-        expect(welcomeValidationSchema(mockRequest, emptyRes, emptyNext)).toStrictEqual(mockRequest.body)
+        expect(welcomeValidationSchema(mockRequest, emptyRes, emptyNext)).toBe(true)
         expect(mockValidateRequest).toHaveBeenCalledTimes(1)
     })
 })
