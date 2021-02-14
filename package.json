@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && nodemon build/src/index.js ",
+    "start": "tsc && set NODE_ENV=development && nodemon build/src/index.js ",
     "build": "tsc --project ./",
     "postbuild": " copyfiles .env build/",
     "tsc": "tsc",
