@@ -17,7 +17,7 @@ const server = supertest(app);
 
 
 describe('Index page test', () => {
-  it('should not get the addresses of a inexistent wallet', async () => {
+  it('sgould get status 200 with correct request', async () => {
     return Promise.resolve()
       .then(() => {
         return server
@@ -26,7 +26,7 @@ describe('Index page test', () => {
       });
   });
 
-  it('should not get the addresses of a inexistent wallet', async () => {
+  it('should throw error 401 without correc user information', async () => {
     return Promise.resolve()
       .then(() => {
         return server
@@ -55,7 +55,7 @@ describe('Index page test', () => {
         done();
       });
   });
-  it('should not get the addresses of a inexistent walle2t', async () => {
+  it('should throw error 422 without correct request body', async () => {
     return Promise.resolve()
       .then(() => {
         return server
