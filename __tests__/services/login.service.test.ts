@@ -4,11 +4,11 @@ import chaiAsPromised from "chai-as-promised";
 chai.use(chaiAsPromised);
 
 const expect = chai.expect;
-const successResponseContain: Object = {
-  password: "user",
-  role: "user",
-  username: "user",
-};
+const successResponseKeys: any = [
+  'role',
+  'username', 
+  'accessToken'
+];
 const wrongUserOrPassMessage = "Wrong username or password";
 
 describe("Login Service -> postLoginService", () => {
@@ -32,10 +32,10 @@ describe("Login Service -> postLoginService", () => {
     );
   });
 
-  it("should get a success response & response should contain keys: username, password, role ", async () => {
+  it("should get a success response & response should contain keys: username, role & accessToken ", async () => {
     const response = await postLoginService("user", "user");
-    return expect(response).to.contain(
-      successResponseContain
+    return expect(response).to.include.all.keys(
+      successResponseKeys
       );
   });
 

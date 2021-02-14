@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from 'express'
 import { postLoginService } from '../services/login.service'
-
 import createError from 'http-errors'
 
 const postLoginController = async (
@@ -21,6 +20,8 @@ const postLoginController = async (
       return next(createError(401, 'Username or password incorret'))
     }
   } catch (e) {
+    if (e.message === 'Wrong username or password')
+      return next(createError(401, e.message))
     return next(createError(500, e.message))
   }
 }

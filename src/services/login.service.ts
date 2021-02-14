@@ -23,14 +23,16 @@ const postLoginService = async (username: String, password: String) => {
   })
 
   if (user) {
+    const { username, role } = user
     // Generate an access token
     accessToken = jwt.sign(
-      { username: user.username, role: user.role },
+      { username: username, role: role },
       accessTokenSecret
     )
 
     const response = {
-      ...user,
+      username,
+      role,
       accessToken: accessToken,
     }
 
