@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc && set NODE_ENV=development && nodemon build/src/index.js ",
+    "dev": "tsc && set NODE_ENV=development && nodemon build/src/index.js ",
+    "start": "tsc && nodemon build/src/index.js ",
     "build": "tsc --project ./",
     "postbuild": " copyfiles .env build/",
     "tsc": "tsc",
@@ -43,6 +44,7 @@
     "@types/jest": "^26.0.20",
     "@types/joi": "^17.2.3",
     "@types/jsonwebtoken": "^8.5.0",
+    "@types/morgan": "^1.9.2",
     "@types/node": "^14.14.25",
     "@types/sinon-chai": "^3.2.5",
     "@types/supertest": "^2.0.10",
