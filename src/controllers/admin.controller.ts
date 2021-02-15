@@ -9,10 +9,8 @@ const getAdminController = async function (
   next: NextFunction
 ) {
   try {
-    if (!req.user) return next(createError(404, 'user not provided'))
-
-    if (req.user.role !== 'admin')
-      return next(createError(403, 'access not allowed'))
+    if (!req.user) return next(createError(401))
+    if (req.user.role !== 'admin') return next(createError(401))
 
     const serviceMessage = await getAdminWelcome()
 
