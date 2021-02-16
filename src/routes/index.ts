@@ -1,6 +1,6 @@
-import * as express from 'express'
+import { Router } from 'express'
 
-const router = express.Router()
+const router = Router()
 
 // import controllers
 import WelcomeRoute from './welcome.route'
