@@ -8,6 +8,8 @@ import morgan from 'morgan'
 import { stream } from './logger'
 import errorMiddleware from '../middlewares/error'
 
+import docsRoute from './docs'
+
 export default async ({ app }: { app: express.Application }) => {
   const options: cors.CorsOptions = {
     allowedHeaders: [
@@ -30,6 +32,7 @@ export default async ({ app }: { app: express.Application }) => {
   app.use(bodyParser.json())
   // ...add more middlewares here
   app.use('/', routes)
+  app.use('/docs', docsRoute)
   app.use('/*', MiddleWare404)
 
   app.use(errorMiddleware)

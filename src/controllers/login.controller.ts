@@ -15,7 +15,7 @@ const postLoginController = async (
     if (response.accessToken) {
       return res
         .status(200)
-        .json({ status: 200, ...response, message: 'Succesfull login' })
+        .json({ userAuth: { ...response }, message: 'Succesfull login' })
     } else {
       return next(createError(401, 'Username or password incorret'))
     }
