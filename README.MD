@@ -96,4 +96,4 @@ you will find all routes information in localhost:8081/docs
 
 ## Found a bug? Missing a specific feature?
 
-Feel free to  **file a new issue**  with a respective title and description on the the  [lponciolo/express-production-template](https://github.com/lponciolo/express-production-temp
+Feel free to  **file a new issue**  with a respective title and description on the the  [lponciolo/express-production-template](https://github.com/lponciolo/express-production-template)
